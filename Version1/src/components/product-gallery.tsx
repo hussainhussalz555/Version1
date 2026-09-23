@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "@/components/safe-image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
@@ -17,7 +17,7 @@ export function ProductGallery({ images, alt }: Props) {
   return (
     <div>
       <button className="relative block aspect-square w-full overflow-hidden border border-black/10 bg-[#f4f1ea]" onClick={() => setOpen(true)}>
-        <Image src={images[index]} alt={alt} fill className="object-cover" />
+        <SafeImage src={images[index]} alt={alt} fill className="object-cover" />
         <span className="absolute bottom-3 right-3 inline-flex items-center gap-1 bg-white/90 px-2 py-1 text-xs">
           <ZoomIn className="h-3.5 w-3.5" /> Zoom
         </span>
@@ -29,7 +29,7 @@ export function ProductGallery({ images, alt }: Props) {
             onClick={() => setIndex(i)}
             className={`relative aspect-square overflow-hidden border ${i === index ? "border-black" : "border-black/10"}`}
           >
-            <Image src={image} alt={`${alt} view ${i + 1}`} fill className="object-cover" />
+            <SafeImage src={image} alt={`${alt} view ${i + 1}`} fill className="object-cover" />
           </button>
         ))}
       </div>
@@ -51,7 +51,7 @@ export function ProductGallery({ images, alt }: Props) {
               <X className="h-4 w-4" />
             </button>
             <div className="relative mx-auto mt-12 h-[82vh] w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-              <Image src={images[index]} alt={alt} fill className="object-contain" sizes="100vw" />
+              <SafeImage src={images[index]} alt={alt} fill className="object-contain" sizes="100vw" />
             </div>
           </motion.div>
         )}

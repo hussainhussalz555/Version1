@@ -1,4 +1,8 @@
 import type { Product, ProductCategory } from "@/lib/types";
+import { IMAGES } from "@/lib/images";
+
+// Product photos live in `public/products/`. See `docs/product-images.md`.
+const photo = IMAGES.products;
 
 export const productCategories: ProductCategory[] = [
   "Concealed Shower Sets",
@@ -27,8 +31,8 @@ export const products: Product[] = [
       { label: "Installation Type", value: "Concealed wall-mounted" },
       { label: "Included", value: "Rain head, arm, mixer trim, spout, handheld shower, hose" },
     ],
-    images: ["/products/product1.png", "/products/product1.png", "/products/product1.png"],
-    sequenceFrames: ["/products/product1.png", "/products/product2.png", "/products/product3.png"],
+    images: [photo.product1, photo.product1, photo.product1],
+    sequenceFrames: [photo.product1, photo.product2, photo.product3],
     featured: true,
   },
   {
@@ -50,8 +54,8 @@ export const products: Product[] = [
       { label: "Installation Type", value: "Concealed wall-mounted" },
       { label: "Included", value: "Rain head, arm, mixer trim, spout, handheld shower, hose" },
     ],
-    images: ["/products/product2.png", "/products/product2.png", "/products/product2.png"],
-    sequenceFrames: ["/products/product2.png", "/products/product1.png", "/products/product3.png"],
+    images: [photo.product2, photo.product2, photo.product2],
+    sequenceFrames: [photo.product2, photo.product1, photo.product3],
     featured: true,
   },
   {
@@ -73,8 +77,8 @@ export const products: Product[] = [
       { label: "Installation Type", value: "Concealed wall-mounted" },
       { label: "Included", value: "Rain head, arm, mixer trim, spout, handheld shower, hose" },
     ],
-    images: ["/products/product3.png", "/products/product3.png", "/products/product3.png"],
-    sequenceFrames: ["/products/product3.png", "/products/product2.png", "/products/product1.png"],
+    images: [photo.product3, photo.product3, photo.product3],
+    sequenceFrames: [photo.product3, photo.product2, photo.product1],
     featured: true,
   },
   {
@@ -95,7 +99,7 @@ export const products: Product[] = [
       { label: "Countertop", value: "Engineered quartz" },
       { label: "Sink Type", value: "Integrated basin" },
     ],
-    images: ["/products/product3.png", "/products/product2.png"],
+    images: [photo.product3, photo.product2],
   },
   {
     id: "p5",
@@ -115,7 +119,7 @@ export const products: Product[] = [
       { label: "Mounting", value: "Countertop" },
       { label: "Surface", value: "Nano-glazed" },
     ],
-    images: ["/products/product2.png", "/products/product1.png"],
+    images: [photo.product2, photo.product1],
   },
   {
     id: "p6",
@@ -135,7 +139,7 @@ export const products: Product[] = [
       { label: "Connector", value: "Universal" },
       { label: "Finish", value: "Scratch-resistant" },
     ],
-    images: ["/products/product1.png", "/products/product3.png"],
+    images: [photo.product1, photo.product3],
   },
 ];
 
