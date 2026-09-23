@@ -93,10 +93,14 @@ git push
 
 - Must be named `logo.png` and sit directly in `public/` (`public/logo.png`).
   The header looks for exactly that path.
-- **Transparent background**, dark/neutral artwork — the header is light beige.
-- Wide format around **3:1** (for example `600 × 200`), at least 120 px tall so
-  it stays sharp on retina screens. It is displayed at 40 px tall with
-  automatic width.
+- The header is solid black (`#000`) to blend with the current logo's black
+  background. Use a black background or a transparent image with light/gold
+  artwork; avoid a light rectangular background that would stand out.
+- The current logo uses warm gold (`#FAD407`). Matching that color keeps the
+  logo and the header's navigation accents consistent.
+- A wide format around **4:1** (for example `800 × 200`) works best. Use a
+  high-resolution file so it stays sharp when displayed at 32 px tall on
+  small screens and 40 px tall on larger screens.
 - Until the file exists, the header automatically shows the brand name as text,
   so the site is never broken in the meantime.
 
