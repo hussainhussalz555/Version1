@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "@/components/safe-image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
@@ -32,7 +32,7 @@ export function QuickViewModal({ product, onClose }: Props) {
             className="grid w-full max-w-3xl gap-6 bg-white p-5 md:grid-cols-2"
           >
             <div className="relative aspect-square overflow-hidden bg-[#f5f3ed]">
-              <Image src={product.images[0]} alt={product.name} fill className="object-cover" />
+              <SafeImage src={product.images[0]} alt={product.name} fill className="object-cover" />
             </div>
             <div>
               <button onClick={onClose} className="ml-auto block rounded-full p-2 hover:bg-black/5">

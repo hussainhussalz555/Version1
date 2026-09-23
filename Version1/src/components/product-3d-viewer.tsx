@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import { SafeImage } from "@/components/safe-image";
 
 type ViewerProps = {
   modelUrl?: string;
@@ -50,7 +50,7 @@ export function Product3DViewer({ modelUrl, sequenceFrames }: ViewerProps) {
       <section className="space-y-4 border border-black/10 bg-[#f3efe7] p-5">
         <p className="text-xs uppercase tracking-[0.18em] text-black/50">Scroll Showcase</p>
         <motion.div style={{ rotate }} className="relative mx-auto aspect-square w-full max-w-md">
-          <Image src={sequenceFrames[0]} alt="Scroll product view" fill className="object-contain" />
+          <SafeImage src={sequenceFrames[0]} alt="Scroll product view" fill className="object-contain" />
         </motion.div>
         <p className="text-sm text-black/65">
           3D model not attached yet. Showing premium scroll-driven visual fallback that can be replaced by a real model + exploded animation.

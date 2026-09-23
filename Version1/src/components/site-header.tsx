@@ -7,6 +7,7 @@ import { Menu, Search, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, siteConfig } from "@/lib/site-config";
+import { IMAGES } from "@/lib/images";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/context/cart-context";
 
@@ -22,7 +23,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3" aria-label="Go to homepage">
           {!logoError ? (
             <Image
-              src="/brand/logo.png"
+              src={IMAGES.logo}
               alt={`${siteConfig.brandName} logo`}
               width={120}
               height={44}

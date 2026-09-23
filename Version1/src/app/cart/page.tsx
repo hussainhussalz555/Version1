@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "@/components/safe-image";
 import Link from "next/link";
 import { useCart } from "@/context/cart-context";
 import { formatPrice } from "@/lib/utils";
@@ -26,7 +26,7 @@ export default function CartPage() {
             {items.map((item) => (
               <article key={item.productId} className="grid grid-cols-[90px_1fr_auto] gap-4 border border-black/10 p-3">
                 <div className="relative aspect-square overflow-hidden bg-[#f3efe8]">
-                  <Image src={item.product.images[0]} alt={item.product.name} fill className="object-cover" />
+                  <SafeImage src={item.product.images[0]} alt={item.product.name} fill className="object-cover" />
                 </div>
                 <div>
                   <p className="text-sm text-black/60">{item.product.category}</p>

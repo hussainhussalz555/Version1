@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "@/components/safe-image";
+import { IMAGES } from "@/lib/images";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { featuredProducts } from "@/data/products";
@@ -28,7 +29,7 @@ export function HomeSections() {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9 }} className="relative aspect-[4/5] overflow-hidden border border-black/10 bg-white">
-            <Image src="/products/product1.png" alt="Premium concealed shower set" fill className="object-cover" priority />
+            <SafeImage src={IMAGES.homeHero} alt="Premium concealed shower set" fill className="object-cover" priority />
           </motion.div>
         </div>
       </section>
@@ -66,7 +67,7 @@ export function HomeSections() {
 
       <section className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 md:px-8 lg:grid-cols-2">
         <div className="relative aspect-[4/5] overflow-hidden border border-black/10 bg-[#f2eee5]">
-          <Image src="/products/product2.png" alt="Bathroom fixture showcase" fill className="object-cover" />
+          <SafeImage src={IMAGES.homeShowcase} alt="Bathroom fixture showcase" fill className="object-cover" />
         </div>
         <div className="self-center">
           <p className="text-xs uppercase tracking-[0.2em] text-black/50">Premium Showcase</p>

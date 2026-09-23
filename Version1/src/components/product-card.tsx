@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "@/components/safe-image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Eye, ShoppingBag } from "lucide-react";
@@ -21,7 +21,7 @@ export function ProductCard({ product, onQuickView }: Props) {
   return (
     <motion.article whileHover={{ y: -4 }} className="group border border-black/10 bg-white">
       <Link href={`/product/${product.slug}`} className="relative block aspect-[4/5] overflow-hidden bg-[#f7f5f0]">
-        <Image
+        <SafeImage
           src={product.images[0]}
           alt={product.name}
           fill
